@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="autor" content="Alan Castellanos">
+  <meta name="description" content="Validacion de Datos">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Examen DOM</title>
+</head>
+        <body>
+        <script type="text/javascript" src="Formulario.js"></script>
+        <h1><strong>DOM y formularios</strong> </h1>
+        
+        <p>--------------------------------------------------</p>
+        <form id="Form1" style="align-content: left; margin-left: 10px;">
+          <strong>Nombre de personaje favorito</strong>
+          <br><br>
+          <input id="PerF" type="text">
+          <br><br>
+          
+          <input type="button"value="Ingresar" onclick="AddPerF(this.form);">
+      </form>
+        <blockquote >
+          <p>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+           <p id="p1">Nombre:</p>
+           <p id="p2">Número de control:</p>
+           <br><br>
+           <p id="p3"><strong>Personajes favoritos</strong> </p>
+           <br><br>
+           <p id="p4"><strong>Películas favoritas</strong> </p>
+           <ol id="ol1">
+             <li>Shrek</li>
+             <li>Un mundo feliz</li>
+             <li>La vida inútil de Pito Pérez</li>
+             <li>El club de la pelea</li>
+           </ol>
+           <script>
+             var contenido = document.createTextNode(Datos[0]);
+              var parrafo = document.createElement("p");
+              var padre = document.getElementById("p1");
+              parrafo.appendChild(contenido);
+              padre.appendChild(parrafo);
+
+              var contenido = document.createTextNode(Datos[1]);
+              var parrafo = document.createElement("p");
+              var padre = document.getElementById("p2");
+              parrafo.appendChild(contenido);
+              padre.appendChild(parrafo);
+
+              for (var i=0; i<MPersonajes.length; i++){
+              var contenido = document.createTextNode("- "+MPersonajes[i]);
+              var parrafo = document.createElement("p");
+              var padre = document.getElementById("p3");
+              parrafo.appendChild(contenido);
+              padre.appendChild(parrafo);
+            }
+
+            for (var i=0; i<MPeliculas.length; i++){
+              var contenido = document.createTextNode(MPeliculas[i]);
+              var parrafo = document.createElement("li");
+              var padre = document.getElementById("ol1");
+              parrafo.appendChild(contenido);
+              padre.appendChild(parrafo);
+            }
+           </script>
+        </blockquote>
+        
+        
+    </body>
+        
+       
+</html>
